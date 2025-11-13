@@ -17,14 +17,21 @@ class MyWidget(QWidget):
         self.layout.addWidget(self.button)
 
         self.button.clicked.connect(self.changeGreeting)
-        self.le.returnPressed.connect(self.changeGreeting)
-        self.le.textChanged.connect(self.changeGreeting)
+        self.le.returnPressed.connect(self.changeName)
+        self.le.textChanged.connect(self.changeName)
 
-
+        self.greeting = self.hello[0]
+        self.name = ""
 
     @Slot()
     def changeGreeting(self):
-        self.label.setText(self.hello[random.randint(0, len(self.hello) - 1)] + " " + self.le.text())
+        self.greeting = random.choice(self.hello)
+        self.label.setText(self.greeting + " " + self.name)
+
+    @Slot()
+    def changeName(self):
+        self.name = self.le.text()
+        self.label.setText(self.greeting + " " + self.name)
 
 
 if __name__ == '__main__':
