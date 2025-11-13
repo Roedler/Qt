@@ -16,13 +16,14 @@ class MyWidget(QWidget):
         self.layout.addWidget(self.label)
         self.layout.addWidget(self.button)
 
-        self.button.clicked.connect(self.magic)
-        self.le.returnPressed.connect(self.magic)
-        self.le.textChanged.connect(self.magic)
+        self.button.clicked.connect(self.changeGreeting)
+        self.le.returnPressed.connect(self.changeGreeting)
+        self.le.textChanged.connect(self.changeGreeting)
+
 
 
     @Slot()
-    def magic(self):
+    def changeGreeting(self):
         self.label.setText(self.hello[random.randint(0, len(self.hello) - 1)] + " " + self.le.text())
 
 
