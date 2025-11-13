@@ -1,0 +1,6 @@
+.idea
+**/*.md
+**/*.pdf
+**/.png
+**/.jpg
+.DS_Store
