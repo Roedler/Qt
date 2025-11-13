@@ -7,16 +7,21 @@ class MyWidget(QWidget):
     def __init__(self):
         super().__init__()
         self.hello = ["Hallo", "Hello", "Salut", "Salam", "Ola"]
+
         self.button = QPushButton("Click me!")
+        self.quitButton = QPushButton("Quit")
+
         self.label = QLabel(self.hello[0], alignment=Qt.AlignCenter)
         self.le = QLineEdit()
 
         self.layout = QVBoxLayout(self)
+        self.layout.addWidget(self.quitButton)
         self.layout.addWidget(self.le)
         self.layout.addWidget(self.label)
         self.layout.addWidget(self.button)
 
         self.button.clicked.connect(self.changeGreeting)
+        self.quitButton.clicked.connect(self.close)
         self.le.returnPressed.connect(self.changeName)
         self.le.textChanged.connect(self.changeName)
 
