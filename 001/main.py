@@ -1,13 +1,7 @@
 import sys
-from PySide6.QtWidgets import *
-from PySide6.QtCore import Slot
-
-@Slot()
-def sayHello():
-    print("Hello world")
+from PySide6.QtWidgets import QApplication, QLabel
 
 app = QApplication(sys.argv)
-button = QPushButton("Click me")
-button.clicked.connect(sayHello)
-button.show()
+label = QLabel("Hello MTI!")
+label.show()
 app.exec()
