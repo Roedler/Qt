@@ -5,4 +5,5 @@
 **/*.png
 **/*.jpg
 **/*.webp
+**/*.zip
 .DS_Store
