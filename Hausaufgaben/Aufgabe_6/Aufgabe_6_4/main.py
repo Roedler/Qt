@@ -1,7 +1,15 @@
+import sys
+from PySide6.QtGui import QPixmap
+from PySide6.QtWidgets import QApplication
+
 from Hausaufgaben.Hausaufgabe_6.Aufgabe_6_3.MonsterCard import MonsterCard
 
 
 def monsterDeck():
+    app = QApplication.instance()
+    if app is None:
+        app = QApplication(sys.argv)
+
     MONSTER_DATA = [
         {"title": "Astrales Echo", "image": "Astrales Echo.png",
          "subtitle": "Eine schimmernde, halbtransparente, humanoide Erscheinung, die bei ihrem Erscheinen die Schwerkraft in der Nähe verzerrt. Es ist schwach im direkten Kampf, aber seine psychischen Angriffe sind verheerend.",
@@ -85,11 +93,12 @@ def monsterDeck():
     ]
 
     monsterDeck = {}
-    basePath = "/Users/lno/Library/Mobile Documents/iCloud~md~obsidian/Documents/lennart/Uni/3.Semester/Modellierung-und-Programmierung-interaktiver-Systeme/Hausaufgaben/Aufgabe_5/Aufgabe_5_3/!Media/"
+    basePath = "./!Media/"
 
     for data in MONSTER_DATA:
         imgPath = basePath + data["image"]
-        # pixmap = QPixmap(imgPath)
+        pixmap = QPixmap(imgPath)
+
         healthPoints, attackValue, defenseValue, damageValue, armor = data["stats"]
         card = MonsterCard(
             key=None,
@@ -100,22 +109,24 @@ def monsterDeck():
             defenseValue=defenseValue,
             damageValue=damageValue,
             armorValue=armor,
-            pixmap=None
+            pixmap=pixmap if not pixmap.isNull() else None
         )
+
         monsterDeck[card.getKey()] = card
 
-        # if pixmap.isNull():
-        #     print(f"WARNING: Image for '{data['title']}' could not be loaded under: '{imgPath}'.")
+        if pixmap.isNull():
+            print(f"WARNING: Bild für '{data['title']}' konnte nicht geladen werden: '{imgPath}'")
 
-    print(f"{len(monsterDeck)} monster card are loaded.\n")
+    print(f"\n{len(monsterDeck)} Monsterkarten erfolgreich geladen.\n")
 
     i = 1
-    for monster in monsterDeck:
-        print(f"{i}. {monsterDeck[monster].getTitle()}")
+    for key in monsterDeck:
+        print(f"{i}. {monsterDeck[key].getTitle()}")
         i += 1
-
 
     return monsterDeck
 
+
 if __name__ == "__main__":
-    monsterDeck()
+    deck = monsterDeck()
+    QApplication.quit()
