@@ -6,4 +6,5 @@
 **/*.jpg
 **/*.webp
 **/*.zip
+**/ui_*.py
 .DS_Store
