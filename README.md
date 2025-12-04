@@ -2,9 +2,10 @@
 
 ## Table of Contents
 - [Tech Stack](#tech-stack)
-- Setup
-    - Autocompiling
-- Authors
+- [Setup](#setup)
+    - [External Tools](#external-tools) 
+    - [Autocompiling](#autocompiling)
+- [Authors](#authors)
 
 ## Tech Stack
 - Python 3.13
