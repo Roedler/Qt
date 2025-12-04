@@ -1,4 +1,5 @@
 # Qt
+This is a repository to experiment with python & qt with the QT-Designer.
 
 ## Table of Contents
 - [Tech Stack](#tech-stack)
