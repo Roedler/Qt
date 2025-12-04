@@ -1,7 +1,7 @@
 # Qt
 
 ## Table of Contents
-- Tech Stack
+- [Tech Stack](#tech-stack)
 - Setup
     - Autocompiling
 - Authors
