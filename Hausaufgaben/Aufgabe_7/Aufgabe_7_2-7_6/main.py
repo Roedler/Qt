@@ -2,7 +2,7 @@ import sys
 
 from PySide6.QtCore import Slot
 from PySide6.QtWidgets import QApplication, QMainWindow
-from compiled.Aufgabe_7 import Ui_MainWindow
+from ui_Aufgabe_7 import Ui_MainWindow
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -17,8 +17,6 @@ class MainWindow(QMainWindow):
 
     @Slot(int)
     def on_horizontalSlider_valueChanged(self, value=0):
-        print("newValue ", value)
-
         if value < 3:
             color = "blue"
         elif value > 20:
