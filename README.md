@@ -1,6 +1,8 @@
 # Qt
 This is a repository to experiment with python & qt with the QT-Designer.
 
+It also provides the source code of the [HRW-Monsters](hrw-monsters/main.py) card game.
+
 ## Table of Contents
 - [Tech Stack](#tech-stack)
 - [Setup](#setup)
