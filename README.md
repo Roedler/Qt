@@ -37,6 +37,8 @@ For the QT-Designer: write the following into the correct input fields:
 And last but not least for the PyUIC:
 ![py-uic_setup.png](.docs/py-uic_setup.png)
 
+After all of that you can start the QT-Designer from `Tools > External Tools > QT-Designer`. Then a new window will show and you can start creating. Saving the project will create a `*.ui` file. To run the program look into the [main_example.py](examples/main_example.py) file and either run the [autocompiler](#autocompiling) or click the newly saved `*.ui` file and import the cimpiled `*.py` file into your `main.py` file and run it.
+
 ### Autocompiling
 To start the autocompiling, go into your terminal go to the repository folder and type:
 
