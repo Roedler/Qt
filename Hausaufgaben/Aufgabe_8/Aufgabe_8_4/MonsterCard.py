@@ -1,7 +1,6 @@
 import random
 
 class MonsterCard:
-    """Speichert die Spielwerte einer Monsterkarte."""
     def __init__(self, name: str):
         self.name = name
         self.max_hp = random.randint(5, 15)
