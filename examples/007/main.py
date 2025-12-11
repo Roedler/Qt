@@ -14,6 +14,10 @@ class Example_007(QMainWindow):
         self.addButton = self.ui.addButton
         self.lineEdit = self.ui.lineEdit
 
+        self.setConnections()
+
+    @Slot()
+    def setConnections(self):
         self.addButton.clicked.connect(self.addButtonClicked)
         self.listWidget.itemClicked.connect(self.listItemClicked)
 
