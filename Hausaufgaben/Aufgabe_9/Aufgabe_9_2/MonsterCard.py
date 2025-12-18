@@ -63,16 +63,13 @@ class MonsterCard(QWidget):
         out_pixmap.fill(Qt.GlobalColor.transparent)
 
         painter = QPainter(out_pixmap)
-        # Wichtig für Schärfe und glatte Kanten
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
         painter.setRenderHint(QPainter.RenderHint.SmoothPixmapTransform)
 
-        # Den quadratischen Pfad mit Rundung definieren
         path = QPainterPath()
         path.addRoundedRect(0, 0, size, size, radius, radius)
 
         painter.setClipPath(path)
-        # Zeichnet das große Bild verschoben (-x, -y), sodass nur die Mitte im Quadrat landet
         painter.drawPixmap(-x, -y, src_pixmap)
         painter.end()
 
